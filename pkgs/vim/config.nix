@@ -10,27 +10,25 @@
     alias vi='vim'
   '';
 
-  environment.variables = {
-    EDITOR = [ "${pkgs.vim}/bin/vim" ];
-  };
+  programs.vim.defaultEditor = true;
 
   environment.etc.vimrc = {
     text = ''
       " Use Vim settings, rather than Vi settings (much better!).
       " This must be first, because it changes other options as a side effect.
       set nocompatible
-      
+
       " allow backspacing over everything in insert mode
       set backspace=indent,eol,start
 
       " keep 1024 lines of command line history
       set history=1024
-      
+
       " use syntax highlighting if possible
       if has("syntax")
         syntax on
       endif
-      
+
       " spaces not tabs
       set tabstop=2
       set shiftwidth=2

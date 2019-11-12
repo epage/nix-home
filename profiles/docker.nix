@@ -2,10 +2,6 @@
 
 {
   virtualisation.libvirtd.enable = true;
-  virtualisation.lxc.enable = true;
-  virtualisation.lxc.usernetConfig = ''
-    bfo veth lxcbr0 10
-  '';
   virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "overlay";
+  virtualisation.docker.autoPrune.enable = true;
 }

@@ -6,21 +6,12 @@
     enable = true;
     enableCtrlAltBackspace = true;
 
-    windowManager = {
-      i3.enable = true;
-      i3.package = pkgs.i3-gaps;
-      default = "i3";
-    };
+    displayManager.lightdm.enable = true;
+    desktopManager.default = "xfce";
+    desktopManager.xfce.enable = true;
+    desktopManager.xterm.enable = false;
 
-    displayManager = {
-      sessionCommands = "i3status &";
-    };
-
-    desktopManager = {
-      default = "none";
-      xterm.enable = false;
-    };
-
+    xautolock.enable = true;
   };
 
   nixpkgs.config = {
@@ -78,57 +69,39 @@
     xtitle
     xclip
 
+    xfce.thunar_volman
+    xfce.xfce4_systemload_plugin
+    xfce.xfce4_cpufreq_plugin
+    xfce.xfce4_cpugraph_plugin
+    xfce.xfce4_power_manager
+    xfce.xfce4taskmanager
+
     imagemagick
 
     xterm
+    alacritty
     xdg_utils
 
     gparted
 
-    rofi
-    dmenu
-    feh       # for background image
-    i3lock    # screen lock
-    i3status  # sys info  
-    scrot     # for screenshot
-    hyper
-    terminator
-    alacritty
-
     epdfview
     chromium
-    dunst
-    uget
-    wireshark
     firefox
-    gimp
-    inkscape
     xfontsel
     slack
-    atom
     zoom-us
     vimHugeX
-    i3minator
-    evince
     libreoffice
     vlc
 
-    keybase
-    keybase-gui
-
-    gnome3.nautilus
-    gnome3.eog
-
     google-play-music-desktop-player
     messenger-for-desktop
-
-    vscode
   ];
 
-  
+
   # Enable corsair keyboard/mouse
   hardware.ckb.enable = true;
-  
+
   # Enable 3D acceleration for 32bit applications (e.g. wine)
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.driSupport = true;
@@ -139,4 +112,9 @@
   networking.firewall.extraCommands = ''
     iptables -I INPUT -p udp -m udp --dport 32768:60999 -j ACCEPT
   '';
+
+  # Hide Mouse When Idle Daemon
+  services.unclutter.enable = true;
+
+  programs.ssh.forwardX11 = true;
 }

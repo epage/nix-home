@@ -7,5 +7,10 @@
     rustc
     rustfmt
 
+    cargo-bloat
+    cargo-edit
+    cargo-tree
+    cargo-outdated
+
   ];
 }

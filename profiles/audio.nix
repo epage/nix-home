@@ -6,15 +6,12 @@
     enable = true;
     package = pkgs.pulseaudioFull;
   };
+  # Some programs need this to function properly, like XFCE
+  nixpkgs.config.pulseaudio = true
 
   environment.systemPackages = with pkgs; [
     apulse  # Allows ALSA applications to use pulse
     pavucontrol  # PulseAudio volume control
-
-    # Audio tools
-    audacity
-    ardour
-    milkytracker
   ];
 
 #  # Enable HDMI audio for pulse
