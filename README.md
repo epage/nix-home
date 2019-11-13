@@ -9,7 +9,7 @@ All you need in `configuration.nix`
       <path>/machines/<machine>.nix
     ];
 
-  system.stateVersion = ...
+  system.stateVersion = # ...
 }
 ```
 
@@ -19,6 +19,7 @@ All you need in `configuration.nix`
 - `profiles/`: slices of configuration that can be pulled in.
 - `hardware/`: Low-level hardware support (on top of the auto-generated `hardware-configuration. nix`)
 - `users/`: Potential users for the various machines.
+- `pkgs/`: TBD
 
 # Resources
 
