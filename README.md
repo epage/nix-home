@@ -1,4 +1,4 @@
-# dotfiles-nixos
+> nixos-config: system configuration for NixOS
 
 All you need in `configuration.nix`
 ```nix
