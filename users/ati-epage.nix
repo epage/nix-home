@@ -13,5 +13,10 @@
       ../profiles/rust.nix
       ../profiles/python.nix
     ];
+
+  programs.git = {
+    userName = "Ed Page";
+    userEmail = "epage@duosecurity.com";
+  }
 }
 

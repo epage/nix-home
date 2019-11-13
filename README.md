@@ -6,4 +6,4 @@ See also [nixos-config](https://github.com/epage/nixos-config)
 
 - `users/`: top-level files.
 - `profiles/`: slices of configuration that can be pulled in.
-- `pkgs/`: TBD
+- `pkgs/`: Package-specific config

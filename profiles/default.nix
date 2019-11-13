@@ -31,22 +31,10 @@
     dos2unix
     file
     gnumake
-    htop
-    iftop
-    iotop
-    lsof
-    mkpasswd
-    nix-prefetch-scripts
-    nix-repl
     nmap
     p7zip
-    pciutils
     pmutils
-    psmisc
-    stdenv
     strace
-    sudo
-    sysstat
     tcpdump
     unzip
     usbutils
