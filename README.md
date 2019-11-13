@@ -1,9 +1,9 @@
 > nix-home: user configuration for Nix
 
+See also [nixos-config](https://github.com/epage/nixos-config)
+
 # Implementation
 
-- `machines/`: top-level files.
+- `users/`: top-level files.
 - `profiles/`: slices of configuration that can be pulled in.
-- `hardware/`: Low-level hardware support (on top of the auto-generated `hardware-configuration. nix`)
-- `users/`: Potential users for the various machines.
 - `pkgs/`: TBD
