@@ -50,6 +50,20 @@
 
   # Allow proprietary software (such as the NVIDIA drivers).
   nixpkgs.config.allowUnfree = true;
+  nix = {
+    trustedBinaryCaches = [
+      http://cache.nixos.org
+      http://hydra.nixos.org
+      http://hydra.cryp.to
+    ];
+  };
+
+  # automatic gc
+  nix.gc.automatic = true;
+  nix.gc.dates = "weekly";
+  nix.gc.options = "--delete-older-than 30d";
+  # hardlink identical files to save space
+  nix.autoOptimiseStore = true;
 
   documentation.enable = true;
   documentation.dev.enable = true;
@@ -57,26 +71,7 @@
   documentation.info.enable = false;
   documentation.man.enable = false;
 
-  # Select internationalisation properties.
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-  };
-
-  # Set the timezone.
-  time.timeZone = "America/Denver";
-
-  # automatic gc
-  nix.gc.automatic = true;
-  nix.gc.dates = "weekly";
-  nix.gc.options = "--delete-older-than 30d";
-
-  programs.command-not-found.enable = true;
-
-  programs.less.enable = true;
-
-  programs.screen.screenrc ''
+  programs.screen.screenrc = ''
     autodetach on # Autodetach session on hangup instead of terminating screen completely
 
     # tab-completion flash in heading bar
