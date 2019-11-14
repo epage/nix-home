@@ -27,6 +27,9 @@
     universal-ctags
     mdcat
 
+    nix-du
+    nix-index
+
     curl
     dos2unix
     file
