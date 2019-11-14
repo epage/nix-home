@@ -36,6 +36,7 @@
     vimHugeX
     libreoffice
     vlc
+    meld
 
     google-play-music-desktop-player
     messenger-for-desktop

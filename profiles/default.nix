@@ -41,6 +41,7 @@
     tcpdump
     unzip
     usbutils
+    python3Packages.xkcdpass
     vim_configurable
     wget
     youtube-dl
