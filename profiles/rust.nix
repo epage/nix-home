@@ -13,4 +13,8 @@
     cargo-outdated
 
   ];
+
+  environment.variables = {
+    RUST_BACKTRACE = "1";
+  };
 }
