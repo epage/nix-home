@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # install packages
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     audacity
     obs-studio
     pitivi

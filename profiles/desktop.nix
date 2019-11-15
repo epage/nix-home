@@ -18,7 +18,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     imagemagick
 
     xterm
@@ -42,5 +42,5 @@
     messenger-for-desktop
   ];
 
-  programs.ssh.forwardX11 = true;
+  programs.autorandr.enable = true;
 }

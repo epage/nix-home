@@ -3,14 +3,13 @@
 {
 
   imports = [
-    ../pkgs/bash/config.nix
-    ../pkgs/steam/config.nix
-    ../pkgs/vim/config.nix
+    ../pkgs/bash/default.nix
+    ../pkgs/git/default.nix
+    ../pkgs/ssh/default.nix
+    ../pkgs/vim/default.nix
   ];
 
-  # List packages installed in system profile. To search by name, run:
-  # nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     bat  # cat
     bb  # system monitor
     fd  # find
@@ -50,28 +49,15 @@
 
   # Allow proprietary software (such as the NVIDIA drivers).
   nixpkgs.config.allowUnfree = true;
-  nix = {
-    trustedBinaryCaches = [
-      http://cache.nixos.org
-      http://hydra.nixos.org
-      http://hydra.cryp.to
-    ];
-  };
 
-  # automatic gc
-  nix.gc.automatic = true;
-  nix.gc.dates = "weekly";
-  nix.gc.options = "--delete-older-than 30d";
-  # hardlink identical files to save space
-  nix.autoOptimiseStore = true;
+  programs.home-manager.enable = true;
 
-  documentation.enable = true;
-  documentation.dev.enable = true;
-  documentation.doc.enable = false;
-  documentation.info.enable = false;
-  documentation.man.enable = false;
+  home.sessionVariables.LESS = "-R";
 
-  programs.screen.screenrc = ''
+  programs.direnv.enable = true;
+  programs.fzf.enable = true;
+
+  home.files.".screenrc".text = ''
     autodetach on # Autodetach session on hangup instead of terminating screen completely
 
     # tab-completion flash in heading bar

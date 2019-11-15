@@ -1,10 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  programs.bash.enableCompletion = true;
-
   # Show git info in bash prompt and display a colorful hostname if using ssh.
-  programs.bash.promptInit = ''
+  programs.bash.initExtra = ''
     export GIT_PS1_SHOWDIRTYSTATE=1
     source ${pkgs.gitAndTools.gitFull}/share/git/contrib/completion/git-prompt.sh
     __prompt_color="1;32m"

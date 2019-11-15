@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  # install networking packages
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     etherape
     ettercap
     tcpdump

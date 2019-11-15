@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-
+  home.packages = with pkgs; [
     cargo
     rustc
     rustfmt
@@ -11,10 +10,9 @@
     cargo-edit
     cargo-tree
     cargo-outdated
-
   ];
 
-  environment.variables = {
+  home.sessionVariables = {
     RUST_BACKTRACE = "1";
   };
 }
