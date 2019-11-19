@@ -34,15 +34,6 @@
   ];
 
   programs.neovim.extraConfig = ''
-  if has('win32') || has ('win64')
-      let $VIM_CACHE_DIR = $HOME."/vimfiles"
-    else
-      let $VIM_CACHE_DIR = $HOME."/.cache/vim"
-  endif
-  if !isdirectory($VIM_CACHE_DIR)
-     call mkdir($VIM_CACHE_DIR)
-  endif
-
   set hidden "Buffers don't have to be saved and remember undo stuff
 
   """""""""""""""""""""""""""""""""""""""""""""""
@@ -152,21 +143,8 @@
 
   " Persistent undo
   if has("persistent_undo")
-     let undodir = expand("$VIM_CACHE_DIR/undo/")
-     if !isdirectory(undodir)
-        call mkdir(undodir)
-     endif
-     set undodir="$VIM_CACHE_DIR/undo"
      set undofile
   endif
-
-  let backupdir = expand("$VIM_CACHE_DIR/backup/")
-  if !isdirectory(backupdir)
-     call mkdir(backupdir)
-  endif
-  set backupdir="$VIM_CACHE_DIR/backup/"
-  set directory="$VIM_CACHE_DIR/backup/"
-
 
   " Emphasize inconsistent indentation
   highlight EvilSpace ctermbg=darkred guibg=darkred
