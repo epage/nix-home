@@ -31,6 +31,8 @@ git clone https://github.com/epage/nix-home.git
 
 3. Choose the desired `~/.config/nixpkgs/home.nix`
 ```nix
+{ config, pkgs, ... }:
+
 {
   imports = [
     ./nix-home/users/<name>.nix
