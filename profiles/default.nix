@@ -17,14 +17,13 @@
     exa  # ls
     dust  # du
 
-    skim  # Fuzzy finder
     hyperfine
     git
     xsv
     jq
     hexyl
     universal-ctags
-    mdcat
+    #haskellPackages.mdcat Broken?
 
     nix-du
     nix-index
@@ -55,9 +54,10 @@
   home.sessionVariables.LESS = "-R";
 
   programs.direnv.enable = true;
-  programs.fzf.enable = true;
+  programs.skim.enable = true;
+  programs.broot.enable = true;
 
-  home.files.".screenrc".text = ''
+  home.file.".screenrc".text = ''
     autodetach on # Autodetach session on hangup instead of terminating screen completely
 
     # tab-completion flash in heading bar

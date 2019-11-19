@@ -2,22 +2,6 @@
 
 {
 
-  nixpkgs.config = {
-    chromium = {
-      jre = false;
-      enableGoogleTalkPlugin = true;
-      enableAdobeFlash = false;
-      enablePepperPDF = true;
-    };
-
-    firefox = {
-      jre = false;
-      enableGoogleTalkPlugin = true;
-      enableAdobeFlash = false;
-      enablePepperPDF = true;
-    };
-  };
-
   home.packages = with pkgs; [
     imagemagick
 
@@ -39,7 +23,6 @@
     meld
 
     google-play-music-desktop-player
-    messenger-for-desktop
   ];
 
   programs.autorandr.enable = true;
