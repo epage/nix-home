@@ -7,6 +7,7 @@
     ../pkgs/git/default.nix
     ../pkgs/ssh/default.nix
     ../pkgs/vim/default.nix
+    ../pkgs/neovim/default.nix
   ];
 
   home.packages = with pkgs; [
@@ -28,6 +29,7 @@
     nix-du
     nix-index
 
+    screen
     curl
     dos2unix
     file

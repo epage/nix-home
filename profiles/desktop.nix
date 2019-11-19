@@ -22,6 +22,8 @@
     vlc
     meld
 
+    neovim-qt
+
     google-play-music-desktop-player
   ];
 
