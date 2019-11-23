@@ -15,4 +15,8 @@
   home.sessionVariables = {
     RUST_BACKTRACE = "1";
   };
+
+  home.file.".release.toml".text = ''
+    push-remote = "upstream"
+  '';
 }
