@@ -22,14 +22,21 @@ See also my [nixos-config](https://github.com/epage/nixos-config)
 
 1. [Install home-manager](https://rycee.gitlab.io/home-manager/index.html).  TODO How do I get nixos-config to do this for me?
 
-2. Download the configuration
+2. Add needed channels
+```bash
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+nix-channel --add https://nixos.org/channels/nixos-19.09 nixpkgs
+nix-channel --update
+```
+
+3. Download the configuration
 ```bash
 mkdir -p ~/.config/nipkgs
 cd ~/.config/nipkgs
 git clone https://github.com/epage/nix-home.git
 ```
 
-3. Choose the desired `~/.config/nixpkgs/home.nix`
+4. Choose the desired `~/.config/nixpkgs/home.nix`
 ```nix
 { config, pkgs, ... }:
 
@@ -42,7 +49,7 @@ git clone https://github.com/epage/nix-home.git
 }
 ```
 
-4. Activate the configuration
+5. Activate the configuration
 ```bash
 home-manager switch
 ```
