@@ -25,7 +25,6 @@ See also my [nixos-config](https://github.com/epage/nixos-config)
 2. Add needed channels
 ```bash
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
-nix-channel --add https://nixos.org/channels/nixos-19.09 nixpkgs
 nix-channel --update
 ```
 
