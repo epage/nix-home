@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let
+  unstable = import <unstable> {};
+in {
 
   home.packages = with pkgs; [
     imagemagick
@@ -12,7 +14,6 @@
     gparted
 
     epdfview
-    chromium
     firefox
     xfontsel
     slack
@@ -23,6 +24,9 @@
     meld
 
     neovim-qt
+    
+    unstable.chromium
+    unstable.chrome
 
     google-play-music-desktop-player
   ];
