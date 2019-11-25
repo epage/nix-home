@@ -13,3 +13,4 @@ script:
   home-manager build --show-trace  --dry-run -f test-home.nix
   -I nixpkgs=https://nixos.org/channels/nixos-$STATE_VERSION/nixexprs.tar.xz
   -I unstable=https://nixos.org/channels/nixpkgs-unstable
+  -I home-manager=https://github.com/rycee/home-manager/archive/release-$STATE_VERSION.tar.gz
