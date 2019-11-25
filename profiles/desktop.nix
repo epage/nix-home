@@ -26,7 +26,7 @@ in {
     neovim-qt
     
     unstable.chromium
-    unstable.chrome
+    unstable.google-chrome
 
     google-play-music-desktop-player
   ];
