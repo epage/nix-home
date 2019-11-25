@@ -5,9 +5,9 @@ env:
     - STATE_VERSION=19.09
 
 script:
-- nix-channel --add https://github.com/rycee/home-manager/archive/release-$STATE_VERSION.tar.gz home-manager
-- nix-channel --update
-- nix-shell '<home-manager>' -A install
+- >
+  nix-shell '<home-manager>' -A install
+  -I home-manager=https://github.com/rycee/home-manager/archive/release-$STATE_VERSION.tar.gz home-manager
 - echo "{ imports = [ ./users/ati-epage.nix ]; system.stateVersion = \"$STATE_VERSION\"; }" > test-home.nix
 - >
   home-manager build --show-trace  --dry-run -f test-home.nix
