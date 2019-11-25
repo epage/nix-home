@@ -7,7 +7,7 @@ env:
 script:
 - >
   nix-shell '<home-manager>' -A install
-  -I home-manager=https://github.com/rycee/home-manager/archive/release-$STATE_VERSION.tar.gz home-manager
+  -I home-manager=https://github.com/rycee/home-manager/archive/release-$STATE_VERSION.tar.gz
 - echo "{ imports = [ ./users/ati-epage.nix ]; system.stateVersion = \"$STATE_VERSION\"; }" > test-home.nix
 - >
   home-manager build --show-trace  --dry-run -f test-home.nix
