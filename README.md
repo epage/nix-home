@@ -31,8 +31,8 @@ nix-channel --update
 
 3. Download the configuration
 ```bash
-mkdir -p ~/.config/nipkgs
-cd ~/.config/nipkgs
+mkdir -p ~/.config/nixpkgs
+cd ~/.config/nixpkgs
 git clone https://github.com/epage/nix-home.git
 ```
 
