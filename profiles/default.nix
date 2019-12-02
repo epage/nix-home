@@ -17,6 +17,7 @@
     ripgrep  # grep
     exa  # ls
     dust  # du
+    tokei  # loc
 
     hyperfine
     git
