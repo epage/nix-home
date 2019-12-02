@@ -6,7 +6,6 @@
     ../pkgs/bash/default.nix
     ../pkgs/git/default.nix
     ../pkgs/ssh/default.nix
-    ../pkgs/vim/default.nix
     ../pkgs/neovim/default.nix
   ];
 
